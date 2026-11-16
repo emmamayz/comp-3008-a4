@@ -1,0 +1,199 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LinkedIn Jobs Redesign</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="jobs.js" defer></script>
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+    
+<!-- navigation bar  -->
+
+    
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LinkedIn Jobs Redesign</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="jobs.js" defer></script>
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+    <!-- navigation bar -->
+
+    <header class="navbar">
+        <div class="nav-container">
+            <div class="logo">in</div>
+
+            <div class="search-container">
+                <span class="search-icon" aria-hidden="true">⌕</span>
+                <input
+                    type="search"
+                    id="job-search"
+                    aria-label="Search for jobs"
+                    placeholder="Software Engineering Internship..."
+                >
+            </div>
+
+            <nav class="nav-links" aria-label="Main navigation">
+                <button id="home-nav" class="nav-item" type="button">
+                    <img src="pngs/HomeIcon.svg" alt="" class="nav-icon">
+                    
+                </button>
+
+                <button class="nav-item" type="button">
+                    <img src="pngs/MyNetworkIcon.svg" alt="" class="nav-icon">
+                    
+                </button>
+
+                <button id="jobs-nav" class="nav-item active" type="button">
+                    <img src="pngs/JobsIcon.svg" alt="" class="nav-icon">
+                    
+                </button>
+
+                <button class="nav-item" type="button">
+                    <img src="pngs/MessagesIcon.svg" alt="" class="nav-icon">
+                    
+                </button>
+
+                <button class="nav-item" type="button">
+                    <img src="pngs/ProfileIcon.svg" alt="" class="nav-icon">
+                    
+                </button>
+            </nav>
+        </div>
+    </header>
+
+   
+<main>
+
+    <!-- Job search criteria -->
+    <section class="criteria-section" aria-label="Active search criteria">
+        <div class="criteria-container">
+
+            <button class="jobs-button" type="button">
+                Jobs
+            </button>
+
+            <div class="criteria-divider"></div>
+
+            <div id="criteria-tags" class="criteria-tags">
+                <button id="role-tag" class="criteria-tag role-tag" type="button">
+                    Role: Software Engineer
+                </button>
+
+                <button id="type-tag" class="criteria-tag type-tag" type="button">
+                    Type: Internship
+                </button>
+
+                <button id="location-tag" class="criteria-tag location-tag" type="button">
+                    Location: Ottawa
+                </button>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Job search results -->
+    <section id="jobs-page" class="jobs-page">
+
+        <p id="results-count" class="results-count">3 Results</p>
+
+        <div class="jobs-layout">
+
+            <!-- Job listings on the left -->
+            <div id="job-results" class="job-results">
+
+                <button class="job-card" type="button" data-job-id="1">
+                    <div class="job-card-header">
+                        <h2>Posting 1</h2>
+
+                        <div class="job-card-tags">
+                            <span class="mini-tag role-tag">Software Engineer</span>
+                            <span class="mini-tag type-tag">Internship</span>
+                            <span class="mini-tag location-tag">Ottawa</span>
+                        </div>
+                    </div>
+
+                    <p class="job-company">Company</p>
+                    <p class="job-location">Ottawa, ON</p>
+                </button>
+
+                <button class="job-card" type="button" data-job-id="2">
+                    <div class="job-card-header">
+                        <h2>Posting 2</h2>
+
+                        <div class="job-card-tags">
+                            <span class="mini-tag role-tag">Software Engineer</span>
+                            <span class="mini-tag type-tag">Internship</span>
+                            <span class="mini-tag location-tag">Ottawa</span>
+                        </div>
+                    </div>
+
+                    <p class="job-company">Company</p>
+                    <p class="job-location">Ottawa, ON</p>
+                </button>
+
+                <button class="job-card" type="button" data-job-id="3">
+                    <div class="job-card-header">
+                        <h2>Posting 3</h2>
+
+                        <div class="job-card-tags">
+                            <span class="mini-tag role-tag">Software Engineer</span>
+                            <span class="mini-tag type-tag">Internship</span>
+                            <span class="mini-tag location-tag">Ottawa</span>
+                        </div>
+                    </div>
+
+                    <p class="job-company">Company</p>
+                    <p class="job-location">Ottawa, ON</p>
+                </button>
+
+            </div>
+
+            <!-- Selected job details on the right -->
+            <section id="job-details" class="job-details" aria-label="Selected job details">
+
+                <p class="details-company">Company</p>
+                <h1 class="details-title">Posting 3</h1>
+                <p class="details-location">Ottawa, ON</p>
+
+                <span class="details-type">Internship</span>
+
+                <div class="job-actions">
+                    <button id="apply-job" class="apply-button" type="button">
+                        Apply
+                    </button>
+
+                    <button id="save-job" class="save-button" type="button">
+                        Save
+                    </button>
+                </div>
+
+                <div id="save-confirmation" class="save-confirmation" role="status" hidden>
+                    Job Saved
+                    <button id="view-saved" type="button">
+                        View Saved Jobs
+                    </button>
+                </div>
+
+            </section>
+
+        </div>
+    </section>
+
+</main>
+
+
+</body>
+</html>
+
+
