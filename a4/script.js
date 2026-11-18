@@ -5,17 +5,18 @@ const saveBtn = document.getElementById("save-button");
 const criteriaContainer = document.querySelector(".criteria-container");
 
 let currentSelectedJob = null;
+const savedJobs = [];
+
 
 const searchPaths = {
     "software engineering internships in ottawa": "Ottawa",
     "software engineering internships in toronto": "Toronto"
 };
 
-const savedJobs = [];
 
 function updateJobDetails(job){
-    jobDetails.hidden = false;
     if (job){
+        jobDetails.hidden = false;
         document.querySelector(".details-company").textContent = job.company;
         document.querySelector(".details-title").textContent = job.name;
         document.querySelector(".details-location").textContent = job.location;
@@ -26,6 +27,7 @@ function updateJobDetails(job){
     document.getElementById("save-confirmation").hidden = true;
 
 }
+
 
 function populateJobResults(location){
     //clear everything, find matching jobs, create new buttons for each job posting
@@ -69,5 +71,19 @@ function populateJobResults(location){
     
 }
 
+function displaySearchResults(searchQuery){
+    const lowercaseSearch = searchQuery.toLowerCase().trim();
 
+    const location = searchPaths[lowercaseSearch];
+
+    if(location){
+        populateJobResults(location);
+    } else {
+        populateJobResults("");
+        document.getElementById("criteria-section").hidden = true;
+        jobDetails.hidden = true;
+        jobResults.innerHTML = `<p>No results found for search "${searchQuery}".</p>` 
+
+    }
+}
 
