@@ -85,7 +85,7 @@
         </section>
 
         <!-- Job search results -->
-        <section id="jobs-page" class="jobs-page">
+        <section id="jobs-page" hidden class="jobs-page">
 
             <p id="results-count" class="results-count">X Results</p>
 
@@ -182,6 +182,161 @@
         </section>
 
     </main>
+    <main>
+
+        <!-- Saved Jobs heading -->
+        <section class="saved-heading-section">
+            <div class="saved-heading-container">
+
+                <h1>Saved Jobs</h1>
+
+                <a href="index.html" class="back-to-jobs">
+                    Back to Job Search
+                </a>
+
+            </div>
+        </section>
+
+        <!-- Saved Jobs content -->
+        <section id="saved-page" class="saved-page">
+
+            <p id="saved-count" class="saved-count">
+                2 Saved Jobs
+            </p>
+
+            <div class="saved-layout">
+
+                <!-- Saved job listings -->
+                <div id="saved-job-list" class="saved-job-list">
+
+                    <!-- Temporary sample posting 1 -->
+                    <button
+                        class="job-card"
+                        type="button"
+                        data-job-id="1"
+                    >
+                        <div class="job-card-header">
+                            <h2>Software Engineer Intern</h2>
+                        </div>
+
+                        <p class="job-company">Tech Solutions</p>
+                        <p class="job-location">Ottawa, ON</p>
+
+                        <div class="saved-card-tags">
+                            <span class="mini-tag role-tag">
+                                Software Engineer
+                            </span>
+
+                            <span class="mini-tag type-tag">
+                                Internship
+                            </span>
+
+                            <span class="mini-tag location-tag">
+                                Ottawa
+                            </span>
+                        </div>
+                    </button>
+
+                    <!-- Temporary sample posting 2 -->
+                    <button
+                        class="job-card"
+                        type="button"
+                        data-job-id="2"
+                    >
+                        <div class="job-card-header">
+                            <h2>Frontend Developer Intern</h2>
+                        </div>
+
+                        <p class="job-company">Digital Innovations</p>
+                        <p class="job-location">Toronto, ON</p>
+
+                        <div class="saved-card-tags">
+                            <span class="mini-tag role-tag">
+                                Frontend Developer
+                            </span>
+
+                            <span class="mini-tag type-tag">
+                                Internship
+                            </span>
+
+                            <span class="mini-tag location-tag">
+                                Toronto
+                            </span>
+                        </div>
+                    </button>
+
+                </div>
+
+                <!-- Selected saved job details -->
+                <section
+                    id="saved-job-details"
+                    class="saved-job-details"
+                    aria-label="Selected saved job details"
+                >
+
+                    <p class="details-company">
+                        Tech Solutions
+                    </p>
+
+                    <h2 class="saved-details-title">
+                        Software Engineer Intern
+                    </h2>
+
+                    <p class="details-location">
+                        Ottawa, ON
+                    </p>
+
+                    <span class="details-type">
+                        Internship
+                    </span>
+
+                    <div class="job-actions">
+
+                        <button
+                            id="apply-saved-job"
+                            class="apply-button"
+                            type="button"
+                        >
+                            Apply
+                        </button>
+
+                        <button
+                            id="remove-saved-job"
+                            class="remove-button"
+                            type="button"
+                        >
+                            Remove
+                        </button>
+
+                    </div>
+
+                    <p
+                        id="saved-feedback"
+                        class="saved-feedback"
+                        role="status"
+                        hidden
+                    ></p>
+
+                </section>
+
+            </div>
+
+            <!-- Empty state -->
+            <p id="saved-empty" class="saved-empty" hidden>
+                You haven't saved any jobs yet.
+                Return to Job Search to find some!
+            </p>
+
+        </section>
+
+    </main>
+
+</body>
+</html>
+
+
+
+
 
 </body>
 </html>
