@@ -1,7 +1,7 @@
 const jobData = [
     {
         id: 1,
-        name: "Software Engineering Intern A",
+        name: "Software Engineering Intern",
         role: "Software Engineer",
         location: "Ottawa",
         type: "Internship",
@@ -10,7 +10,7 @@ const jobData = [
     },
     {
         id: 2,
-        name: "Software Engineering Intern B",
+        name: "Software Engineering Intern",
         role: "Software Engineer",
         location: "Ottawa",
         type: "Internship",
@@ -21,7 +21,7 @@ const jobData = [
     },
     {
         id: 3,
-        name: "Software Engineering Intern C",
+        name: "Software Engineering Intern",
         role: "Software Engineer",
         location: "Ottawa",
         type: "Internship",
@@ -30,7 +30,7 @@ const jobData = [
     },
     {
         id: 4,
-        name: "Software Engineering Intern D",
+        name: "Software Engineering Intern",
         role: "Software Engineer",
         location: "Toronto",
         type: "Internship",
@@ -39,7 +39,7 @@ const jobData = [
     },
     {
         id: 5,
-        name: "Software Engineering Intern E",
+        name: "Software Engineering Intern",
         role: "Software Engineer",
         location: "Toronto",
         type: "Internship",
@@ -48,7 +48,7 @@ const jobData = [
     },
     {
         id: 6,
-        name: "Software Engineering Intern F",
+        name: "Software Engineering Intern",
         role: "Software Engineer",
         location: "Toronto",
         type: "Internship",
@@ -56,3 +56,5 @@ const jobData = [
         detailLocation: "Toronto, ON, CA"
     }
 ];
+
+const savedJobs = [];
