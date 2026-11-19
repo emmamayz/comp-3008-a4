@@ -1,8 +1,10 @@
 const jobResults = document.getElementById("job-results");
 const jobDetails = document.getElementById("job-details");
 const searchBar = document.getElementById("job-search");
-const saveBtn = document.getElementById("save-button");
+const saveBtn = document.getElementById("save-job");
 const criteriaContainer = document.querySelector(".criteria-container");
+const jobsPage = document.getElementById("jobsResultsPage");
+const savedPage = document.getElementById("savedJobsPage");
 
 let currentSelectedJob = null;
 const savedJobs = [];
@@ -10,7 +12,9 @@ const savedJobs = [];
 
 const searchPaths = {
     "software engineering internships in ottawa": "Ottawa",
-    "software engineering internships in toronto": "Toronto"
+    "software engineering internships in toronto": "Toronto",
+    "software engineering internship in ottawa": "Ottawa",
+    "software engineering internship in toronto": "Toronto"
 };
 
 
@@ -21,6 +25,7 @@ function updateJobDetails(job){
         document.querySelector(".details-title").textContent = job.name;
         document.querySelector(".details-location").textContent = job.location;
         document.querySelector(".details-type").textContent = job.type;
+        currentSelectedJob = job;
     } else {
         jobDetails.hidden = true;
     }
@@ -31,20 +36,21 @@ function updateJobDetails(job){
 
 function populateJobResults(location){
     //clear everything, find matching jobs, create new buttons for each job posting
+    jobResults.innerHTML = "";
     const matchingJobs = jobData.filter(job => job.location === location);
     document.getElementById("results-count").textContent = `${matchingJobs.length} results`;
     if(matchingJobs.length !== 0){
         document.getElementById("criteria-section").hidden = false;
-        document.getElementById("location-tag") = location;
+        document.getElementById("location-tag").textContent = location;
 
         matchingJobs.forEach(job => {
             const jobPosting = document.createElement("button");
 
-            jobPosting.class = "job-card";
+            jobPosting.className = "job-card";
             jobPosting.type = "button";
             jobPosting.dataset.jobId = job.id;
 
-            jobPosting.innerHTML = `div class="job-card-header">
+            jobPosting.innerHTML = `<div class="job-card-header">
                             <h2>${job.name}</h2>
 
                             <div class="job-card-tags">
@@ -57,12 +63,12 @@ function populateJobResults(location){
                         <p class="job-company">${job.company}</p>
                         <p class="job-location">${job.detailLocation}</p>`
             ;
-            jobPosting.addEventListener("click", updateJobDetails(jobPosting));
+            jobPosting.addEventListener("click", ()=>updateJobDetails(job));
             
             jobResults.appendChild(jobPosting);
 
-            if(matchingsJobs[0] === job){
-                updateJobDetails(jobPosting);
+            if(matchingJobs[0] === job){
+                updateJobDetails(job);
             }
         });
     }
@@ -72,6 +78,8 @@ function populateJobResults(location){
 }
 
 function displaySearchResults(searchQuery){
+    jobsPage.hidden = false;
+    savedPage.hidden = true;
     const lowercaseSearch = searchQuery.toLowerCase().trim();
 
     const location = searchPaths[lowercaseSearch];
@@ -86,4 +94,7 @@ function displaySearchResults(searchQuery){
 
     }
 }
+
+const savedSearch = sessionStorage.getItem("searchQuery") || "";
+displaySearchResults(savedSearch);
 
