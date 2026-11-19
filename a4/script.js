@@ -7,6 +7,7 @@ const jobsPage = document.getElementById("jobsResultsPage");
 const savedPage = document.getElementById("savedJobsPage");
 const savedNotif = document.getElementById("save-confirmation");
 const viewSaved = document.getElementById("view-saved");
+const locationTag = document.getElementById("location-tag");
 
 let currentSelectedJob = null;
 let saveTimeout = 0;
@@ -49,11 +50,11 @@ function updateJobDetails(job){
 function populateJobResults(location){
     //clear everything, find matching jobs, create new buttons for each job posting
     jobResults.innerHTML = "";
-    const matchingJobs = jobData.filter(job => job.location === location);
+    const matchingJobs = jobData.filter(job => job.location.toLowerCase() === location.toLowerCase());
     document.getElementById("results-count").textContent = `${matchingJobs.length} results`;
     if(matchingJobs.length !== 0){
         document.getElementById("criteria-section").hidden = false;
-        document.getElementById("location-tag").textContent = location;
+        document.getElementById("location-tag").placeholder = `Location: ${location}`;
 
         matchingJobs.forEach(job => {
             const jobPosting = document.createElement("button");
@@ -83,6 +84,9 @@ function populateJobResults(location){
                 updateJobDetails(job);
             }
         });
+    } else {
+        jobDetails.hidden = true;
+        jobResults.innerHTML = `<p>No results found in "${location}".</p>`;
     }
 
 
@@ -93,6 +97,7 @@ function populateJobResults(location){
 function displaySearchResults(searchQuery){
     jobsPage.hidden = false;
     savedPage.hidden = true;
+    searchBar.value = searchQuery;
     const lowercaseSearch = searchQuery.toLowerCase().trim();
 
     const location = searchPaths[lowercaseSearch];
@@ -109,7 +114,7 @@ function displaySearchResults(searchQuery){
 }
 
 //search bar logic
-searchBar.addEventListener("keypress", (event) => {
+searchBar.addEventListener("keydown", (event) => {
     //searched this up
     if(event.key === "Enter") {
         const newSearch = searchBar.value.trim();
@@ -132,6 +137,12 @@ saveBtn.addEventListener("click", () => {
         saveTimeout = setTimeout(() => {
             savedNotif.hidden = true;
         }, 4000);
+    }
+});
+
+locationTag.addEventListener("keydown", (event)=>{
+    if(event.key === "Enter"){
+        populateJobResults(locationTag.value.toLowerCase().trim());
     }
 });
 
