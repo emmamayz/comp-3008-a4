@@ -137,7 +137,7 @@ saveBtn.addEventListener("click", () => {
         clearTimeout(saveTimeout);
         saveTimeout = setTimeout(() => {
             savedNotif.hidden = true;
-        }, 4000);
+        }, 8000);
     }
 });
 
