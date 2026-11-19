@@ -54,6 +54,7 @@ function populateJobResults(location){
     document.getElementById("results-count").textContent = `${matchingJobs.length} results`;
     if(matchingJobs.length !== 0){
         document.getElementById("criteria-section").hidden = false;
+        document.getElementById("location-tag").value = "";
         document.getElementById("location-tag").placeholder = `Location: ${location}`;
 
         matchingJobs.forEach(job => {
