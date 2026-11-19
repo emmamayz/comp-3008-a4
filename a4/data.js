@@ -56,5 +56,3 @@ const jobData = [
         detailLocation: "Toronto, ON, CA"
     }
 ];
-
-const savedJobs = [];
