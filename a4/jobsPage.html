@@ -1,1 +1,57 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LinkedIn Jobs Redesign</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="search.js" defer></script>
+    <script src="nav.js" defer></script>
+</head>
+<body>
+
+    <!-- Navigation bar -->
+    <header class="navbar">
+        <div class="nav-container">
+            <div class="logo">in</div>
+
+            <div class="search-container">
+                <span class="search-icon" aria-hidden="true">⌕</span>
+                <input
+                    type="search"
+                    id="job-search"
+                    aria-label="Search for jobs"
+                    placeholder="Software Engineering Internship..."
+                >
+            </div>
+
+            <nav class="nav-links" aria-label="Main navigation">
+                <button id="home-nav" class="nav-item" type="button" aria-label="Home">
+                    <img src="pngs/HomeIcon.svg" alt="" class="nav-icon">
+                </button>
+
+                <button class="nav-item" type="button" aria-label="My Network">
+                    <img src="pngs/MyNetworkIcon.svg" alt="" class="nav-icon">
+                </button>
+
+                <button id="jobs-nav" class="nav-item active" type="button" aria-label="Jobs">
+                    <img src="pngs/JobsIcon.svg" alt="" class="nav-icon">
+                </button>
+
+                <button class="nav-item" type="button" aria-label="Messages">
+                    <img src="pngs/MessagesIcon.svg" alt="" class="nav-icon">
+                </button>
+
+                <button class="nav-item" type="button" aria-label="Me">
+                    <img src="pngs/ProfileIcon.svg" alt="" class="nav-icon">
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <h1>Jobs Page</h1>
+
+</body>
+</html>
+
