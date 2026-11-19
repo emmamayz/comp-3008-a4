@@ -137,11 +137,12 @@ saveBtn.addEventListener("click", () => {
 
 //save page logic here
 function displaySavedJobs(){
-    savedJobs.innerHTML = "";
     jobsPage.hidden = true;
     savedPage.hidden = false;
     const savedEmpty = document.getElementById("saved-empty");
     const savedJobList = document.getElementById("saved-job-list");
+    savedJobList.innerHTML = "";
+
 
 
     document.getElementById("saved-count").textContent = `${savedJobs.length} Saved Jobs`;
@@ -167,6 +168,8 @@ function displaySavedJobs(){
                         <p class="job-company">${job.company}</p>
                         <p class="job-location">${job.detailLocation}</p>`
             ;
+
+            savedJobList.appendChild(jobPosting);
         });
     } else {
         savedJobList.hidden = true;
