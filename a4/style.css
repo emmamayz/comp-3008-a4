@@ -146,6 +146,7 @@ body {
     border: 1.5px solid black;
     border-radius: 30px;
     padding: 14px 24px;
+    
     font-size: 16px;
     cursor: pointer;
     color: black;
@@ -214,8 +215,9 @@ body {
 
 .job-card-header {
     display: flex;
-    align-items: center;
-    gap: 22px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
 }
 
 .job-card h2 {
@@ -229,7 +231,7 @@ body {
     display: flex;
     gap: 12px;
     align-items: center;
-    min-width: 0;
+    margin-bottom: 8px;
 }
 
 .mini-tag {
@@ -239,9 +241,9 @@ body {
     padding: 6px 12px;
     font-size: 12px;
     white-space: nowrap;
-    max-width: 90px;
-    overflow: hidden;
-    text-overflow: ellipsis;
+    max-width: none;
+    overflow: visible;
+    text-overflow: clip;
 }
 
 .job-company {
