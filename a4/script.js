@@ -142,7 +142,7 @@ saveBtn.addEventListener("click", () => {
 
 locationTag.addEventListener("keydown", (event)=>{
     if(event.key === "Enter"){
-        populateJobResults(locationTag.value.toLowerCase().trim());
+        populateJobResults(locationTag.value.trim());
     }
 });
 
